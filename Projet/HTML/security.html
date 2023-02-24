@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="../Picture/Icons/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/security.css">
+    <script src="https://kit.fontawesome.com/157324e58a.js" crossorigin="anonymous"></script>
+    <title>Sécurité</title>
+</head>
+<body>
+    <div class="container">
+        <!-- --------------------------------------------------------------------------------------- -->
+        <header class="navbar">
+            <!-- ------------------------------------ -->
+            <div class="bar-responsive">
+            <!--  -->
+                <div class="burger">
+                    <span></span>
+                </div>
+            <!--  -->
+                <div class="logo">
+                    <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+                </div>
+            <!--  -->
+                <div class="account">
+                    <a href="#"><img src="../Picture/Icons/profil.png" alt=""></a>
+                </div>
+            <!--  -->
+            </div>
+
+            <div class="back-bar-responsive">
+                
+                <div class="search">
+                    <form action="#" method="post" class="searchbar">
+                        <input class="input" id="searchInputResp" type="text" placeholder="Search ...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="categories">
+                    <ul class="listing-categories">
+                        <li><a href="/accueil"><span>Accueil</span></a></li>
+                        <li><a href="/subject_actu"><span>Actualités</span></a></li>
+                        <li><a href="/subject_pop"><span>Populaire</span></a></li>
+                        <li><a href="/subject_affichage"><span>Forums</span></a></li>
+                        <li><a href="/contact"><span>Nous contacter</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+                <!---- --------------------------------- ---->
+            <nav class="bar">
+                <div class="block-left">
+                    <!--  -->
+                    
+                    <!--  -->
+                    <div class="logo">
+                        <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+                    </div>
+                    <!--  -->
+                    <div class="categories">
+                        <ul class="listing-categories">
+                            <li><a href="/accueil"><span>Accueil</span></a></li>
+                            <li><a href="/subject_actu"><span>Actualités</span></a></li>
+                            <li><a href="/subject_pop"><span>Populaire</span></a></li>
+                            <li><a href="/subject_affichage"><span>Forums</span></a></li>
+                            <li><a href="/contact"><span>Nous contacter</span></a></li>
+                        </ul>
+                    </div>
+                    <!--  -->
+                </div>
+                <!----  ---->
+                <div class="block-right">
+                    <!--  -->
+                    <form action="#" method="post" class="searchbar">
+                        <input class="input" id="searchInput" type="text" placeholder="Search ...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </form>
+                    <!--  -->
+                    {{if eq .Error false}}
+                    <div class="lang">
+                        <img src="../Picture/Icons/drapeau.png" alt="drapeau">
+                    </div>
+                    {{end}}
+                    <!--  -->
+                    <div class="blocky">
+                    <div class="login">
+                        {{if eq .Pseudo ""}}
+                            <a href="#modal-opened" class="link-1" id="modal-closed">
+                        {{else}}
+                            <a href="/profil" class="link-1" id="modal-closed">
+                        {{end}}
+                            <img class="profil" src="../Picture/Icons/profil.png" alt="profil">
+                        {{if eq .Pseudo ""}}
+                            <p class="log">Log In</p>
+                        {{else}}
+                            <p class="log">{{.Pseudo}}</p>
+                            <a href="/login_delete" class="adel"><img src="../Picture/Icons/logout.png" class="del"></a>
+                        {{end}}
+                        </a>
+    
+                        <div class="modal-container" id="modal-opened">
+                          <div class="modal">
+                        
+                            <div class="modal__details">
+                              <h1 class="modal__title">Se connecter</h1>
+                            </div>
+                            <div class="block">
+                                <div class="error">
+                                    {{if eq .Error2 true}}
+                                        <h2>L'adresse mail ou le mot de passe est incorrect !</h2>
+                                    {{end}}
+                                </div>
+
+                              <form action="/login_exec " method="POST" class="form">
+
+                                <input type="email" id="email" name="email" placeholder="*email" required>
+                            
+                                <input type="password" id="password" name="password" placeholder="*Password" required>
+                                <p><a href="/contact" class="mdp">Mot de passe oublié ? </a></p>
+                            
+                                <input type="submit" value="Valider" class="submit">
+                                <p><a href="/register" class="ins">Pas encore inscrit ? </a></p>
+                              </form>
+
+                            </div>
+                            <a href="#modal-closed" class="link-2"></a>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!--  -->
+                    {{if eq .Error false}}
+                    <div class="settings">
+                        <a href="/modifyprofil"><img src="../Picture/Icons/settings.png" alt=""></a>
+                    </div>
+                    {{end}}
+                    <!--  -->
+                </div>
+                <!----  ---->
+            </nav>
+        </header>
+        <!-- ---------------------------------------------------- -->
+    </div>
+    <div class="container2">
+        <section class="settings-details-all-block">
+            <div class="setting-details-title">
+                <h class="title-settings">Settings</h>
+            </div>
+            <div class="settings-details-choice-all">
+                <div class="settings-details-choice">
+                    <a href="/profil" class="choice1">Détails du compte</a>
+                    <a href="/modifyprofil" class="choice2">Paramètres</a>
+                    <a href="/security" class="choice3">Sécurité</a>
+                </div>
+                <div class="settings-details-information">
+                    <div class="settings-details-informations-background">
+                        <div class="settings-details-change-password">
+                            <h class="title-password">CHANGER VOTRE MOT DE PASSE</h>
+                        </div>
+                        <div class="settings-details-change-password-text">
+                            <p>Pour votre sécurité, nous vous conseillons vivement de choisir un mot de passe unique que vous n'utilisez pour aucun autre compte en ligne.</p>
+                        </div>
+                        <div class="settings-details-change-password-form">
+                            <form class="form1" action="/security_exec" method="POST">
+                                <div class="settings-details-change-password-form-part1">
+                                    <div class="settings-details-password-title1">
+                                        <h class="title-password2">NOUVEAU MDP</h>
+                                    </div>
+                                    <div class="settings-details-change-password-form-part1-under-title">
+                                        <div class="title-required">
+                                            <h class="title-password-required">Requis</h>
+                                        </div>
+                                    </div>
+                                    <div class="input-newpassword">
+                                        <label for="MDP">MDP</label>
+                                        <input type="text" name="password">
+                                    </div>
+                                    <div class="settings-details-password-title1">
+                                        <h class="title-password2">CONFIRMER LE NOUVEAU MDP</h>
+                                    </div>
+                                    <div class="settings-details-change-password-form-part1-under-title">
+                                        <div class="title-required2">
+                                            <h class="title-password-required">Requis</h>
+                                        </div>
+                                    </div>
+                                    <div class="input-newpassword">
+                                        <label for="MDP">MDP</label>
+                                        <input type="text" name="password2">
+                                    </div>
+                                </div>
+                                <div class="settings-details-change-password-form-part2">
+                                    <div class="settings-details-change-password-form-part2-title">
+                                        <div class="title-your-password">VOTRE MOT DE PASSE</div>
+                                    </div>
+                                    <div class="settings-details-change-password-form-part2-text">
+                                        <p>Votre mot de passe doit faire au moins 7 caractères.</p>
+                                    </div>
+                                    <div class="settings-details-change-password-form-part2-text2">
+                                        <p>Votre mot de passe doit contenir au moins un chiffre.</p>
+                                    </div>
+                                    <div class="settings-details-change-password-form-part2-text3">
+                                        <p>Votre mot de passe doit contenir au moins un caractère spécial.</p>
+                                    </div>
+                                    <div class="settings-details-change-password-form-part2-input-change">
+                                        <input type="submit" class="submit2" name="changepassword" value="Changer">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-----------------------footer----------------------->
+    <footer>
+        <div class="footer-up">
+            <div class="footer-up-logotext">
+                <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="icon"></a>
+                <div class="footer-up-logotext-text">
+                    <h5>Odyssee.fr</h5>
+                    <span>Parcourrez l'histoire à travers Odyssée</span>
+                </div>
+            </div>
+            <div class="footer-up-beta">
+                <a href="https://de.freepik.com/search?format=search&query=mythologie" target="_blank"><img src="../Picture/Icons/footer.png" alt="lien site officiel"></a>
+            </div>
+        </div>
+
+        <div class="footer-down">
+            <div class="footer-down-copy-right">
+                <a href="/accueil">ODYSSEE.FR</a> 2022   |   ALL RIGHTS RESERVED <br>
+                <div class="block2">
+                    <img class="pic2" src="../Picture/Icons/Doc.png">
+                    <a href="/reglement">Règlement&nbsp;</a><br>
+                </div>
+                <a href="/politique">Politique de confidentialité</a>
+            </div>
+            <div class="footer-down-info">
+                <ul>
+                    <li><a href="/accueil">Accueil</a><a href="/subject_actu">Actualités</a><a href="/subject_pop">Populaire</a><a href="/subject_affichage">Forums</a><a href="/contact">Nous contacter</a></li>
+                    <li>CRÉDITS ODYSSEE.FR</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- ------------------------------------------------------ -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="../JS/main.js"></script>
+</body>
+</html>

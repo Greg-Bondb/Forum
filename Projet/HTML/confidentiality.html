@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/95e7288016.js" crossorigin="anonymous"></script>
+    <title>Politique de confidentialitée</title>
+    <link rel="stylesheet" href="../CSS/confidentiality.css">
+</head>
+<body>
+    <div class="container">
+        <!-- --------------------------------------------------------------------------------------- -->
+        <header class="navbar">
+            <!-- ------------------------------------ -->
+            <div class="bar-responsive">
+            <!--  -->
+                <div class="burger">
+                    <span></span>
+                </div>
+            <!--  -->
+                <div class="logo">
+                    <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+                </div>
+            <!--  -->
+                <div class="account">
+                    <a href="#"><img src="../Picture/Icons/profil.png" alt=""></a>
+                </div>
+            <!--  -->
+            </div>
+
+            <div class="back-bar-responsive">
+                
+                <div class="search">
+                    <form action="#" method="post" class="searchbar">
+                        <input class="input" id="searchInputResp" type="text" placeholder="Search ...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="categories">
+                    <ul class="listing-categories">
+                        <li><a href="/accueil"><span>Accueil</span></a></li>
+                        <li><a href="/subject_actu"><span>Actualités</span></a></li>
+                        <li><a href="/subject_pop"><span>Populaire</span></a></li>
+                        <li><a href="/subject_affichage"><span>Forums</span></a></li>
+                        <li><a href="/contact"><span>Nous contacter</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+                <!---- --------------------------------- ---->
+            <nav class="bar">
+                <div class="block-left">
+                    <!--  -->
+                    
+                    <!--  -->
+                    <div class="logo">
+                        <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+                    </div>
+                    <!--  -->
+                    <div class="categories">
+                        <ul class="listing-categories">
+                            <li><a href="/accueil"><span>Accueil</span></a></li>
+                            <li><a href="/subject_actu"><span>Actualités</span></a></li>
+                            <li><a href="/subject_pop"><span>Populaire</span></a></li>
+                            <li><a href="/subject_affichage"><span>Forums</span></a></li>
+                            <li><a href="/contact"><span>Nous contacter</span></a></li>
+                        </ul>
+                    </div>
+                    <!--  -->
+                </div>
+                <!----  ---->
+                <div class="block-right">
+                    <!--  -->
+                    <form action="#" method="post" class="searchbar">
+                        <input class="input" id="searchInput" type="text" placeholder="Search ...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </form>
+                    <!--  -->
+                    {{if eq .Error false}}
+                    <div class="lang">
+                        <img src="../Picture/Icons/drapeau.png" alt="drapeau">
+                    </div>
+                    {{end}}
+                    <!--  -->
+                    <div class="blocky">
+                    <div class="login">
+                        {{if eq .Pseudo ""}}
+                            <a href="#modal-opened" class="link-1" id="modal-closed">
+                        {{else}}
+                            <a href="/profil" class="link-1" id="modal-closed">
+                        {{end}}
+                            <img class="profil" src="../Picture/Icons/profil.png" alt="profil">
+                        {{if eq .Pseudo ""}}
+                            <p class="log">Log In</p>
+                        {{else}}
+                            <p class="log">{{.Pseudo}}</p>
+                            <a href="/login_delete" class="adel"><img src="../Picture/Icons/logout.png" class="del"></a>
+                        {{end}}
+                        </a>
+    
+                        <div class="modal-container" id="modal-opened">
+                          <div class="modal">
+                        
+                            <div class="modal__details">
+                              <h1 class="modal__title">Se connecter</h1>
+                            </div>
+                            <div class="block">
+                                <div class="error">
+                                    {{if eq .Error2 true}}
+                                        <h2>L'adresse mail ou le mot de passe est incorrect !</h2>
+                                    {{end}}
+                                </div>
+
+                              <form action="/login_exec " method="POST" class="form">
+
+                                <input type="email" id="email" name="email" placeholder="*email" required>
+                            
+                                <input type="password" id="password" name="password" placeholder="*Password" required>
+                                <p><a href="/contact" class="mdp">Mot de passe oublié ? </a></p>
+                            
+                                <input type="submit" value="Valider" class="submit">
+                                <p><a href="/register" class="ins">Pas encore inscrit ? </a></p>
+                              </form>
+
+                            </div>
+                            <a href="#modal-closed" class="link-2"></a>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!--  -->
+                    {{if eq .Error false}}
+                    <div class="settings">
+                        <a href="/modifyprofil"><img src="../Picture/Icons/settings.png" alt=""></a>
+                    </div>
+                    {{end}}
+                    <!--  -->
+                </div>
+                <!----  ---->
+            </nav>
+        </header>
+        <!-- ---------------------------------------------------- -->
+    </div>
+
+    <!-- CONTENU -->
+    <div class="container2">
+        <div class="confidentiality-odyssee-principal">
+            <div class="confidentiality-odyssee-principal-title">
+                <h class="confidentiality-title">Politique de confidentialité</h>
+            </div>
+            <div class="confidentiality-odyssee-principal-text">
+                <div class="confidentiality-text1">
+                    <p>Nous nous engageons à protéger et à respecter votre vie privée. Si vous avez des questions concernant vos informations personnelles, veuillez nous contacter.<br><br>
+
+                        Quelles informations nous détenons sur vous<br>
+                        Le type de données que nous collectons et traitons comprend:<br><br>
+                        
+                        Votre nom ou nom d'utilisateur.<br>
+                        Votre adresse électronique.<br>
+                        D'autres données peuvent être collectées si vous choisissez de les partager, par exemple si vous remplissez des champs de votre profil.<br><br>
+                        
+                        Nous recueillons tout ou partie de ces informations dans les cas suivants:<br><br>
+                        
+                        Vous vous inscrivez en tant que membre sur ce site.<br>
+                        Vous remplissez notre formulaire de contact.<br>
+                        Vous parcourez ce site. Voir "Politique en matière de cookies" ci-dessous.<br>
+                        Vous remplissez les champs de votre profil.<br>
+                        Comment vos informations personnelles sont utilisées<br>
+                        Nous pouvons utiliser vos informations personnelles de la manière suivante:<br><br>
+                        
+                        Sécuriser vos données<br>
+                        Nous nous engageons à garantir la sécurité de toutes les informations que vous nous fournissez. Afin d'empêcher tout accès ou toute divulgation non autorisés, nous avons mis en place des mesures et des procédures appropriées pour sauvegarder et sécuriser<br> les informations que nous recueillons.<br><br>
+                        
+                        Politique du cookie<br>
+                        Les cookies sont de petits fichiers texte que nous définissons sur votre ordinateur et qui nous permettent d'offrir certaines fonctionnalités<br> sur notre site, comme la possibilité de se connecter ou de mémoriser certaines préférences.<br><br>
+                        
+                        Droits<br>
+                        Vous avez le droit d'accéder aux données personnelles que nous détenons sur vous ou d'en obtenir une copie. Pour ce faire, veuillez nous contacter. Si vous estimez que les informations que nous détenons à votre sujet sont incomplètes ou inexactes, vous pouvez contactez-nous pour nous demander de compléter ou de corriger ces informations.<br><br>
+                        
+                        Vous avez également le droit de demander l'effacement de vos données personnelles. Veuillez nous contacter si vous souhaitez que nous supprimions vos données personnelles.<br><br>
+                        
+                        Acceptation de cette politique<br>
+                        La poursuite de l'utilisation de notre site signifie que vous acceptez cette politique. Si vous n'acceptez pas cette politique, veuillez ne pas utiliser ce site. Lors de votre inscription, nous vous demanderons d'accepter explicitement la politique de confidentialité.<br><br>
+                        
+                        Modifications de cette politique<br>
+                        Nous pouvons apporter des modifications à cette politique à tout moment. Il peut vous être demandé de revoir et de ré-accepter les informations contenues dans cette politique si elles devaient changer à l'avenir.<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------- -->
+    
+    <!-----------------------footer----------------------->
+    <footer>
+        <div class="footer-up">
+            <div class="footer-up-logotext">
+                <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="icon"></a>
+                <div class="footer-up-logotext-text">
+                    <h5>Odyssee.fr</h5>
+                    <span>Parcourrez l'histoire à travers Odyssée</span>
+                </div>
+            </div>
+            <div class="footer-up-beta">
+                <a href="https://de.freepik.com/search?format=search&query=mythologie" target="_blank"><img src="../Picture/Icons/footer.png" alt="lien site officiel"></a>
+            </div>
+        </div>
+
+        <div class="footer-down">
+            <div class="footer-down-copy-right">
+                <a href="/accueil">ODYSSEE.FR</a> 2022   |   ALL RIGHTS RESERVED <br>
+                <div class="block2">
+                    <img class="pic2" src="../Picture/Icons/Doc.png">
+                    <a href="/reglement">Règlement&nbsp;</a><br>
+                </div>
+                <a href="/politique">Politique de confidentialité</a>
+            </div>
+            <div class="footer-down-info">
+                <ul>
+                    <li><a href="/accueil">Accueil</a><a href="/subject_actu">Actualités</a><a href="/subject_pop">Populaire</a><a href="/subject_affichage">Forums</a><a href="/contact">Nous contacter</a></li>
+                    <li>CRÉDITS ODYSSEE.FR</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- ------------------------------------------------------ -->
+
+    <script src="main.js"></script>
+    <script src="https://kit.fontawesome.com/95e7288016.js" crossorigin="anonymous"></script>
+</body>
+</html>

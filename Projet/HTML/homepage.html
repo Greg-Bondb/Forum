@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="../Picture/Icons/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/homepage.css">
+    <script src="https://kit.fontawesome.com/157324e58a.js" crossorigin="anonymous"></script>
+    <title>Accueil</title>
+</head>
+<body>
+    <div class="container">
+        <!-- --------------------------------------------------------------------------------------- -->
+        <header class="navbar">
+            <!-- ------------------------------------ -->
+            <div class="bar-responsive">
+            <!--  -->
+                <div class="burger">
+                    <span></span>
+                </div>
+            <!--  -->
+                <div class="logo">
+                    <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+                </div>
+            <!--  -->
+                <div class="account">
+                    <a href="#"><img src="../Picture/Icons/profil.png" alt=""></a>
+                </div>
+            <!--  -->
+            </div>
+
+            <div class="back-bar-responsive">
+                
+                <div class="search">
+                    <form action="#" method="post" class="searchbar">
+                        <input class="input" id="searchInputResp" type="text" placeholder="Search ...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="categories">
+                    <ul class="listing-categories">
+                        <li><a href="/accueil"><span>Accueil</span></a></li>
+                        <li><a href="/subject_actu"><span>Actualités</span></a></li>
+                        <li><a href="/subject_pop"><span>Populaire</span></a></li>
+                        <li><a href="/subject_affichage"><span>Forums</span></a></li>
+                        <li><a href="/contact"><span>Nous contacter</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+                <!---- --------------------------------- ---->
+            <nav class="bar">
+                <div class="block-left">
+                    <!--  -->
+                    
+                    <!--  -->
+                    <div class="logo">
+                        <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+                    </div>
+                    <!--  -->
+                    <div class="categories">
+                        <ul class="listing-categories">
+                            <li><a href="/accueil"><span>Accueil</span></a></li>
+                            <li><a href="/subject_actu"><span>Actualités</span></a></li>
+                            <li><a href="/subject_pop"><span>Populaire</span></a></li>
+                            <li><a href="/subject_affichage"><span>Forums</span></a></li>
+                            <li><a href="/contact"><span>Nous contacter</span></a></li>
+                        </ul>
+                    </div>
+                    <!--  -->
+                </div>
+                <!----  ---->
+                <div class="block-right">
+                    <!--  -->
+                    <form action="#" method="post" class="searchbar">
+                        <input class="input" id="searchInput" type="text" placeholder="Search ...">
+                        <button type="button"><i class="fas fa-search"></i></button>
+                    </form>
+                    <!--  -->
+                    {{if eq .Error false}}
+                    <div class="lang">
+                        <img src="../Picture/Icons/drapeau.png" alt="drapeau">
+                    </div>
+                    {{end}}
+                    <!--  -->
+                    <div class="blocky">
+                    <div class="login">
+                        {{if eq .Pseudo ""}}
+                            <a href="#modal-opened" class="link-1" id="modal-closed">
+                        {{else}}
+                            <a href="/profil" class="link-1" id="modal-closed">
+                        {{end}}
+                            <img class="profil" src="../Picture/Icons/profil.png" alt="profil">
+                        {{if eq .Pseudo ""}}
+                            <p class="log">Log In</p>
+                        {{else}}
+                            <p class="log">{{.Pseudo}}</p>
+                            <a href="/login_delete" class="adel"><img src="../Picture/Icons/logout.png" class="del"></a>
+                        {{end}}
+                        </a>
+    
+                        <div class="modal-container" id="modal-opened">
+                          <div class="modal">
+                        
+                            <div class="modal__details">
+                              <h1 class="modal__title">Se connecter</h1>
+                            </div>
+                            <div class="block">
+                                <div class="error">
+                                    {{if eq .Error2 true}}
+                                        <h2>L'adresse mail ou le mot de passe est incorrect !</h2>
+                                    {{end}}
+                                </div>
+
+                              <form action="/login_exec " method="POST" class="form">
+
+                                <input type="email" id="email" name="email" placeholder="*email" required>
+                            
+                                <input type="password" id="password" name="password" placeholder="*Password" required>
+                                <p><a href="/contact" class="mdp">Mot de passe oublié ? </a></p>
+                            
+                                <input type="submit" value="Valider" class="submit">
+                                <p><a href="/register" class="ins">Pas encore inscrit ? </a></p>
+                              </form>
+
+                            </div>
+                            <a href="#modal-closed" class="link-2"></a>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!--  -->
+                    {{if eq .Error false}}
+                    <div class="settings">
+                        <a href="/modifyprofil"><img src="../Picture/Icons/settings.png" alt=""></a>
+                    </div>
+                    {{end}}
+                    <!--  -->
+                </div>
+                <!----  ---->
+            </nav>
+        </header>
+        <!-- ---------------------------------------------------- -->
+    </div>
+    <div class="container2">
+        <div class="homepage-odyssee-principal">
+            <div class="homepage-odyssee-secondary">
+                <div class="homepage-odyssee-img-slogan">
+                    <div class="homepage-odyssee-img">
+                        <img src="../Picture/Icons/bateau.png">
+                    </div>
+                    <div class="homepage-odyssee-slogan">
+                        <p>"Viser l'Odyssée, atteindre l'Olympe, mourir au Valhalla"</p>
+                    </div>
+                </div>
+                <div class="homepage-odyssee-array-last-forum">
+                    <div class="homepage-odyssee-last-forum">
+                        <h class="title-last-forum"><img src="../Picture/Icons/exclamation-mark.png">&nbsp;&nbsp;Derniers Forums</h>
+                    </div>
+                    <div class="homepage-odyssee-info1-last-forum">
+                        <a href="#"><img src="../Picture/Icons/bouton-jouer.png">&nbsp;Valkyries mythologie Nordique</a>
+                    </div>
+                    <div class="homepage-odyssee-info2-last-forum">
+                        <a href="#"><img src="../Picture/Icons/bouton-jouer.png">&nbsp;Qui était le roi des héros Gilgamesh</p></a>
+                    </div>
+                    <div class="homepage-odyssee-info3-last-forum">
+                        <a href="#"><img src="../Picture/Icons/bouton-jouer.png">&nbsp;Odin est-il mort ?</p></a>
+                    </div>
+                    <div class="homepage-odyssee-info4-last-forum">
+                        <a href="#"><img src="../Picture/Icons/bouton-jouer.png"> &nbsp;Qui est la mère d'Aphrodite</p></a>
+                    </div>
+                </div>
+            </div>
+            <div class="homepage-odyssee-principal-art-mythologie">
+                <div class="homepage-odyssee-principal-art">
+                    <img src="../Picture/Icons/F1.png">
+                </div>
+                <div class="homepage-odyssee-principal-mythologie">
+                    <img src="../Picture/Icons/F2.png">
+                </div>
+            </div>
+            <div class="homepage-odyssee-principal-must-haves">
+                <h class="title-must-haves">Les incontournables</h>
+            </div>
+            <div class="homepage-odyssee-principal-top-art-mythologie">
+                <img src="../Picture/Icons/F3.PNG">
+                <img src="../Picture/Icons/F4.PNG">
+            </div>
+            <div class="homepage-odyssee-principal-array-art-mythologie">
+                <div class="homepage-odyssee-principal-array-art">
+                    <div class="array-art1">
+                        <p class="number1-art">1</p>
+                        <a href="" class="art-number1">Ulysse et les sirènes d' Homère</a>
+                    </div>
+                    <div class="array-art2">
+                        <p class="number2-art">2</p>
+                        <a href="" class="art-number2">La louve du Capitale</a>
+                    </div>
+                    <div class="array-art3">
+                        <p class="number3-art">3</p>
+                        <a href="" class="art-number3">la Théogonie d'Hésiode</a>
+                    </div>
+                    <div class="array-art4">
+                        <p class="number4-art">4</p>
+                        <a href="" class="art-number4">Oedipe et l'énigme du sphinx</a>
+                    </div>
+                    <div class="array-art5">
+                        <p class="number5-art">5</p>
+                        <a href="" class="art-number5">Gilgamesh</a>
+                    </div>
+                </div>
+                <div class="homepage-odyssee-principal-array-mythologie">
+                    <div class="array-mythologie1">
+                        <p class="number1-mythologie">1</p>
+                        <a href="" class="mythologie-number1">Le serpent monde Jörmungand</a>
+                    </div>
+                    <div class="array-mythologie2">
+                        <p class="number2-mythologie">2</p>
+                        <a href="" class="mythologie-number2">Qui est le Minotaure ?</a>
+                    </div>
+                    <div class="array-mythologie3">
+                        <p class="number3-mythologie">3</p>
+                        <a href="" class="mythologie-number3">Le Ragnarôk</a>
+                    </div>
+                    <div class="array-mythologie4">
+                        <p class="number4-mythologie">4</p>
+                        <a href="" class="mythologie-number4">Les 12 Travaux d'Ulysse</a>
+                    </div>
+                    <div class="array-mythologie5">
+                        <p class="number5-mythologie">5</p>
+                        <a href="" class="mythologie-number5">Les Dieux dans l'Antiquité</a>
+                    </div>
+                </div>
+            </div>
+            <div class="homepage-odyssee-principal-crew-title">
+                <h class="crew-title">L'équipe de modération</h>
+            </div>
+            <div class="homepage-odyssee-principal-crew-staff">
+                <div class="homepage-odyssee-principal-crew">
+                    <img src="../Picture/Icons/staff.png">
+                </div>
+            </div>
+            <div class="homepage-odyssee-principal-crew-staff-contact">
+                <div class="crew-staff-contact">
+                    <a href="/contact" class="bouton-contact1">Contacter</a>
+                </div>
+                <div class="crew-staff-contact">
+                    <a href="/contact" class="bouton-contact2">Contacter</a>
+                </div>
+                <div class="crew-staff-contact">
+                    <a href="/contact" class="bouton-contact3">Contacter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-----------------------footer----------------------->
+    <footer>
+        <div class="footer-up">
+            <div class="footer-up-logotext">
+                <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="icon"></a>
+                <div class="footer-up-logotext-text">
+                    <h5>Odyssee.fr</h5>
+                    <span>Parcourrez l'histoire à travers Odyssée</span>
+                </div>
+            </div>
+            <div class="footer-up-beta">
+                <a href="https://de.freepik.com/search?format=search&query=mythologie" target="_blank"><img src="../Picture/Icons/footer.png" alt="lien site officiel"></a>
+            </div>
+        </div>
+
+        <div class="footer-down">
+            <div class="footer-down-copy-right">
+                <a href="/accueil">ODYSSEE.FR</a> 2022   |   ALL RIGHTS RESERVED <br>
+                <div class="block2">
+                    <img class="pic2" src="../Picture/Icons/Doc.png">
+                    <a href="/reglement">Règlement&nbsp;</a><br>
+                </div>
+                <a href="/politique">Politique de confidentialité</a>
+            </div>
+            <div class="footer-down-info">
+                <ul>
+                    <li><a href="/accueil">Accueil</a><a href="/subject_actu">Actualités</a><a href="/subject_pop">Populaire</a><a href="/subject_affichage">Forums</a><a href="/contact">Nous contacter</a></li>
+                    <li>CRÉDITS ODYSSEE.FR</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- ------------------------------------------------------ -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="../JS/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/contact.css">
+  <title>Formulaire de Contact</title>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">
+    <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+  </div>
+</header>
+
+<div class="container">
+  <div class ="bluebar">
+    <h2>Nous Contacter !</h2>
+  </div>
+  <div class="containercont">
+    <h3 class="aide">Besoin d'aide ?</h3>
+    <!-- pas fait exec -->
+    <form action="/contact_exec" method="POST" class="form">
+      <label class="nom">Nom</label>
+      <input type="text" class="nom2" placeholder="Votre nom..." name="lastname" required >
+
+      <label class="prenom">Prénom</label>
+      <input type="text" class="prenom2" placeholder="Votre prénom..." name="firstname" required >
+
+      <label class="adresse">Adresse-E-Mail</label>
+      <input type="email" class="adresse2" placeholder="Votre adresse mail..." name="email" required >
+
+      <label class="obj">Objet du Message</label>
+      <textarea class="obj2" placeholder="Description.." name="message" required ></textarea>
+    </form>
+    <a href="mailto:Odyssee@ynov.com?subject=demande d'aide"><input type="submit" value="Valider" class="submit"></a>
+  </div>
+</div>
+
+</body>
+</html>

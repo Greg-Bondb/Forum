@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/creation_forum.css">
+  <title>Formulaire de Contact</title>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">
+    <a href="/accueil"><img src="../Picture/Icons/logo.png" alt="logo"></a>
+  </div>
+</header>
+
+<div class="error">
+  {{if .Error}}
+  <h2>Tu n'es pas connecté !</h2>
+  <a href="/register" class="lien"> connexion </a>
+  {{end}}
+</div>
+
+<div class="container">
+  <div class ="bluebar">
+    <h2>Créer ton forum !</h2>
+  </div>
+  <div class="containercont">
+    <h3 class="title">INFORMATIONS DU SUJET</h3>
+    <form action="/subject_exec" method="POST" class="form">
+        <div div class="col">
+          <label class="titre">Titre du sujet</label>
+          <input type="text" class="adresse2" placeholder="Saisir le titre..." name="title_subject" required>
+        </div>
+
+      <div class="block">
+        <div class="col">
+          <select name="categories" id="select-categories" required>
+            <option value="" class="cate">--Choix de la catégorie--</option>
+            <option value="Art" class="cate">Art</option>
+            <option value="Mythologie" class="cate">Mythologie</option>
+          </select>
+        </div>
+        <div class="col">
+          <select name="types" id="select-types" required>
+            <option value="" class="cate">--Choix du type--</option>
+            <option value="Grec" class="cate">Grec</option>
+            <option value="Nordique" class="cate">Nordique</option>
+            <option value="Egyptien" class="cate">Egyptien</option>
+            <option value="Romain" class="cate">Romain</option>
+            <option value="Chinois" class="cate">Chinois</option>
+            <option value="Japonais" class="cate">Japonais</option>
+            <option value="Coréen" class="cate">Coréen</option>
+            <option value="Hindou" class="cate">Hindou</option>
+            <option value="Celtique" class="cate">Celtique</option>
+            <option value="Maya" class="cate">Maya</option>
+            <option value="Inca" class="cate">Inca</option>
+            <option value="Aztèque" class="cate">Aztèque</option>
+            <option value="Autre" class="cate">Autre</option>
+          </select>
+        </div>
+      </div>
+
+      <h3 class="title">VOTRE MESSAGE</h3>
+
+      <textarea class="obj2" placeholder="Description..." name="message" required ></textarea>
+
+      <input type="submit" value="Valider" class="submit">
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
