@@ -12,8 +12,6 @@ A forum on Art and Mythology, enough to learn how to manage the administration o
 
 ## Deployment
 
-Before you start, be sure to move the "hangman" folder into your "go programming/src" folder. 😉
-
 To deploy this project, let's move to the "GO" folder :
 
 ```bash
